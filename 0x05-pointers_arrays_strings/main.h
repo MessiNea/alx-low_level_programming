@@ -6,3 +6,5 @@
 void positive_or_negative(int i);
 
 void positive_or_negative(int i);
+
+void reset_to_98(int *n);
