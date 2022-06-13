@@ -16,3 +16,4 @@ int main(void)
 	printf("n=%d\n", n);
 	return (0);
 }
+void reset_to_98(int *n);
