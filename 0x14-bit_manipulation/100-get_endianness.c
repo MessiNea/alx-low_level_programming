@@ -1,21 +1,25 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
 /**
- * clear_bit - Sets the value of a bit to 0 at a given index
- * @n: The number to modify
- * @index: The index in the number to modify
+ * flip_bits - ...
+ * @n: ...
+ * @m: ...
  *
- * Return: 1 if it worked, or -1 if an error occurred
+ * Return: ...
  */
-int clear_bit(unsigned long int *n, unsigned int index)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	if (index < sizeof(unsigned long int) * 8)
+	unsigned long int mask = 0, count = 0;
+
+	mask = n ^ m;
+	while (mask)
 	{
-		*n &= (~(1 << index));
-		return (1);
+		if (mask & 1)
+			count++;
+
+		mask >>= 1;
 	}
 
-	return (-1);
+	return (count);
 }
