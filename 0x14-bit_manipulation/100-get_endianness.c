@@ -1,25 +1,16 @@
-#include <stdlib.h>
 #include "main.h"
 
 /**
- * flip_bits - ...
- * @n: ...
- * @m: ...
- *
- * Return: ...
+ * get_endianness - check endianness
+ * Return: 0 if big endian, or 1 if little endian
  */
-unsigned int flip_bits(unsigned long int n, unsigned long int m)
+int get_endianness(void)
 {
-	unsigned long int mask = 0, count = 0;
+	int num;
 
-	mask = n ^ m;
-	while (mask)
-	{
-		if (mask & 1)
-			count++;
-
-		mask >>= 1;
-	}
-
-	return (count);
+	num = 1;
+	if (*(char *)&num == 1)
+		return (1);
+	else
+		return (0);
 }
